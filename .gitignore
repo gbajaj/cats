@@ -1,0 +1,50 @@
+# Compiled output files
+/build/
+/out/
+
+# Generated files from the build process
+*.apk
+*.ap_
+*.aar
+*.dex
+*.class
+*.jar
+*.war
+*.hprof
+*.so
+*.jdb
+*.egg-info
+.externalNativeBuild/
+.cxx/
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.gradle/
+local.properties
+
+# Android Studio/IntelliJ Specific Files
+.idea/
+*.iml
+.idea/caches
+.idea/modules.xml
+
+# Build system files
+/gradle/wrapper/gradle-wrapper.jar
+/gradlew
+/gradlew.bat
+/build/intermediates/
+/build/outputs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other
+captures/
+
+#Local properties
+local.properties
+
+# Logcat files
+logcat.txt
+*.log
