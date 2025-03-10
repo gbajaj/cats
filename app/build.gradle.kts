@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.kapt)
-
+//    id("com.google.devtools.ksp")
 }
 
 android {
@@ -63,7 +63,26 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.hilt)
+    // Retrofit
+    implementation(libs.retrofit)
 
+    // OkHttp
+    implementation (libs.okhttp)
+    implementation (libs.logging.interceptor)
+
+    // Glide
+    implementation (libs.glide)
+    // Coil
+//    implementation ("io.coil-kt:coil-compose:2.5.0")
+    implementation (libs.compose)
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+
+    // Moshi
+    implementation(libs.moshi.kotlin)
+    // Moshi Converter for Retrofit
+    implementation(libs.converter.moshi)
+    // kapt for Moshi code generation
+    kapt(libs.moshi.kotlin.codegen)
     kapt(libs.hiltcompiler)
 
     testImplementation(libs.junit)
@@ -73,6 +92,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
 }
 kapt {
     // This setting is aimed at improving the accuracy of error reporting when using kapt.
