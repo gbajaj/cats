@@ -2,9 +2,10 @@ package com.datalayer.demo.datalayer.cats.impl
 
 import com.datalayer.demo.datalayer.cats.CatRepository
 import com.datalayer.demo.datalayer.cats.api.Cat
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 
@@ -21,7 +22,7 @@ class CatRepositoryImpl
                 it.copy(downloadUrl = ret +"/cat/"+ it.id)
             } ?: emptyList())
         } else {
-             emptyList<Cat>()
+            emit(emptyList())
         }
-    }
+    }.flowOn(Dispatchers.IO)
 }
